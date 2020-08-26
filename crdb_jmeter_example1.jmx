@@ -16,20 +16,19 @@
         <stringProp name="checkQuery">Select 1</stringProp>
         <stringProp name="connectionAge">5000</stringProp>
         <stringProp name="dataSource">pool1</stringProp>
-        <stringProp name="dbUrl">jdbc:postgresql://${__P(eastcrdb,glenn-bench-0001.roachprod.crdb.io:26257)}/mylogger?autoReconnect=true&amp;sslmode=disable&amp;ssl=false&amp;ApplicationName=JM_app1</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://${__P(pool1,127.0.0.1:26257)}/mylogger?autoReconnect=true&amp;sslmode=disable&amp;ssl=false&amp;ApplicationName=JM_pool2</stringProp>
         <stringProp name="driver">org.postgresql.Driver</stringProp>
         <boolProp name="keepAlive">true</boolProp>
         <stringProp name="password"></stringProp>
         <stringProp name="poolMax">16</stringProp>
         <stringProp name="timeout">10000</stringProp>
-        <stringProp name="transactionIsolation">TRANSACTION_SERIALIZABLE</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
         <stringProp name="trimInterval">60000</stringProp>
         <stringProp name="username">root</stringProp>
         <boolProp name="preinit">false</boolProp>
         <stringProp name="initQuery">SET TIME ZONE UTC;
-
--- CockroachDB defaults to UTC time zone
--- This ensures jmeter is using UTC</stringProp>
+--CockroachDB defaults to UTC time zone
+--This ensures jmeter is using UTC</stringProp>
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
