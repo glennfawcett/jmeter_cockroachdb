@@ -837,6 +837,7 @@ values (&apos;online&apos;, ${__threadNum}, &apos;${__threadGroupName}&apos;, co
         <hashTree>
           <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
             <stringProp name="ConstantTimer.delay">200</stringProp>
+            <stringProp name="TestPlan.comments">Timer per Thread :: Total QPS  = (threads/(Thread Delay milliseconds)*1000)</stringProp>
           </ConstantTimer>
           <hashTree/>
           <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Q1" enabled="true">
