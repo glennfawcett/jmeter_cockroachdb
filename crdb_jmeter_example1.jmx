@@ -273,7 +273,7 @@
         <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService0_Ping" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService0_Ping" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -316,7 +316,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService1_Dashboard" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService1_Dashboard" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -359,7 +359,7 @@ group by 1;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService2_Ingest_Single" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService2_Ingest_Single" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -504,7 +504,7 @@ values (&apos;online&apos;, ${__threadNum}, &apos;${__threadGroupName}&apos;, co
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService3_Ingest_Multi_Statement" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService3_Ingest_Multi_Statement" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -650,7 +650,7 @@ values (&apos;online&apos;, ${__threadNum}, &apos;${__threadGroupName}&apos;, co
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService4_Ingest_Multi_value" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MicroService4_Ingest_Multi_value" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -792,6 +792,142 @@ values (&apos;online&apos;, ${__threadNum}, &apos;${__threadGroupName}&apos;, co
             </doubleProp>
             <intProp name="throughputPeriod">5</intProp>
           </PreciseThroughputTimer>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Adhoc_Weighted" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${__P(duration,300)}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="TestPlan.comments">Adhoc Weighted User Queries</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="bzm - Weighted Switch Controller" enabled="true">
+          <boolProp name="IsRandomChoice">false</boolProp>
+          <collectionProp name="Weights">
+            <collectionProp name="-1629006165">
+              <stringProp name="2560">Q1</stringProp>
+              <stringProp name="1691">50</stringProp>
+              <stringProp name="3569038">true</stringProp>
+            </collectionProp>
+            <collectionProp name="-1629211292">
+              <stringProp name="2561">Q2</stringProp>
+              <stringProp name="1629">30</stringProp>
+              <stringProp name="3569038">true</stringProp>
+            </collectionProp>
+            <collectionProp name="-1630139029">
+              <stringProp name="2562">Q3</stringProp>
+              <stringProp name="1567">10</stringProp>
+              <stringProp name="3569038">true</stringProp>
+            </collectionProp>
+            <collectionProp name="-1630102511">
+              <stringProp name="2563">Q4</stringProp>
+              <stringProp name="1567">10</stringProp>
+              <stringProp name="3569038">true</stringProp>
+            </collectionProp>
+          </collectionProp>
+        </com.blazemeter.jmeter.control.WeightedSwitchController>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">200</stringProp>
+            <stringProp name="TestPlan.comments">Timer per Thread :: Total QPS  = (threads/(Thread Delay milliseconds)*1000)</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Q1" enabled="true">
+            <stringProp name="dataSource">pool1</stringProp>
+            <stringProp name="queryType">Callable Statement</stringProp>
+            <stringProp name="query">SELECT ${__threadNum}, ${__intSum(2,threadNum)}, ${__Random(0,1000)}, now();
+
+-- 
+-- ${__threadNum}
+-- ${__threadGroupName} 
+--
+-- ${__Random(0,1000)}  -- random integer in range
+--
+-- ${__intSum(2,threadNum)}   -- Add two numbers</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultSetMaxRows"></stringProp>
+            <stringProp name="TestPlan.comments">Uses variables in jmeter to test simple select.... like tnsping with running simple SQL that accesses no data</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Q2" enabled="true">
+            <stringProp name="dataSource">pool1</stringProp>
+            <stringProp name="queryType">Callable Statement</stringProp>
+            <stringProp name="query">SELECT ${__threadNum}, ${__intSum(2,threadNum)}, ${__Random(0,1000)}, now();
+
+-- 
+-- ${__threadNum}
+-- ${__threadGroupName} 
+--
+-- ${__Random(0,1000)}  -- random integer in range
+--
+-- ${__intSum(2,threadNum)}   -- Add two numbers</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultSetMaxRows"></stringProp>
+            <stringProp name="TestPlan.comments">Uses variables in jmeter to test simple select.... like tnsping with running simple SQL that accesses no data</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Q3" enabled="true">
+            <stringProp name="dataSource">pool1</stringProp>
+            <stringProp name="queryType">Callable Statement</stringProp>
+            <stringProp name="query">SELECT ${__threadNum}, ${__intSum(2,threadNum)}, ${__Random(0,1000)}, now();
+
+-- 
+-- ${__threadNum}
+-- ${__threadGroupName} 
+--
+-- ${__Random(0,1000)}  -- random integer in range
+--
+-- ${__intSum(2,threadNum)}   -- Add two numbers</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultSetMaxRows"></stringProp>
+            <stringProp name="TestPlan.comments">Uses variables in jmeter to test simple select.... like tnsping with running simple SQL that accesses no data</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Q4" enabled="true">
+            <stringProp name="dataSource">pool1</stringProp>
+            <stringProp name="queryType">Callable Statement</stringProp>
+            <stringProp name="query">SELECT ${__threadNum}, ${__intSum(2,threadNum)}, ${__Random(0,1000)}, now();
+
+-- 
+-- ${__threadNum}
+-- ${__threadGroupName} 
+--
+-- ${__Random(0,1000)}  -- random integer in range
+--
+-- ${__intSum(2,threadNum)}   -- Add two numbers</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultSetMaxRows"></stringProp>
+            <stringProp name="TestPlan.comments">Uses variables in jmeter to test simple select.... like tnsping with running simple SQL that accesses no data</stringProp>
+          </JDBCSampler>
           <hashTree/>
         </hashTree>
       </hashTree>
